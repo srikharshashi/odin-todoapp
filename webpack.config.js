@@ -4,14 +4,14 @@ module.exports = {
     entry: './src/index.js',
     devServer: {
         static: './dist',
-      },
-    mode:"development",
-    devtool:"inline-source-map",
+    },
+    mode: "development",
+    devtool: "inline-source-map",
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    
+
     module: {
         rules: [{
                 test: /\.css$/i,
@@ -24,7 +24,14 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
-              },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: "asset/resource",
+                generator: {
+                  filename: "fonts/[name][ext][query]",
+                },
+            },
         ],
     },
 
