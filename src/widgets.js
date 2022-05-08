@@ -11,6 +11,13 @@ export function getprojectBox(index, projectName) {
 export function getTodoBox(todoobj)
 {
     const tododiv=document.createElement("div");
+    const todoTitle=document.createElement(`p`);
+    todoTitle.textContent=todoobj.title;
+    todoTitle.classList.add("todoTitle");
+    tododiv.appendChild(todoTitle);
+
     tododiv.classList.add("tododiv");
+    console.log(todoobj);
+    return tododiv;
 
 }

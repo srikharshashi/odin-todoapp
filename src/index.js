@@ -4,23 +4,19 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 import "./fonts/zebrazil.ttf";
-import {getModalBodyProj} from "./projmodal";
+import {getModalBodyProj,} from "./projmodal";
 import {Project,Todo} from "./models"
 import {fetchProjects,getProjectsobjList,getProjectsList} from "./datacalls";
 import {getprojectBox} from "./widgets";
 import {renderProjects,renderTodos} from "./render";
+import {getTodoModal} from "./todomodal";
 
 
 let projects = []
 var currentProject=null;
 
 
-
-
-
-
-
-
+//MAIN LAYOUT STRUCTURING
 const body = document.querySelector(".main-content");
 const mainbody = document.createElement("div");
 mainbody.classList.add("mainbody");
@@ -68,7 +64,7 @@ projectspane.appendChild(projectsListBox);
 const todoTilebox=document.createElement("div");
 const todosTitle=document.createElement("p");
 todosTitle.textContent="Todos ::";
-todosTitle.classList.add("todosTitle");
+todosTitle.classList.add("maintodosTitle");
 todoTilebox.classList.add("todosTitleBox");
 todoTilebox.appendChild(todosTitle);
 
@@ -89,7 +85,7 @@ todospane.appendChild(todosListBox);
 
 
 projects=fetchProjects();
-renderProjects(projectsListBox,projects,todosListBox);
+renderProjects(projectsListBox,projects,todosListBox,currentProject);
 
 renderTodos(null,todosListBox);
 
@@ -125,3 +121,14 @@ modalbody =getModalBodyProj(modalmain,modalbody,projects,projectsListBox,todosLi
 
 modalmain.appendChild(modalbody);
 body.appendChild(modalmain);
+
+
+//MODAL STUFF FOR NEW TODO
+const todomodalmain = document.createElement("div");
+todomodalmain.classList.add("todo-main-modal");
+let todomodalbody = document.createElement("div");
+todomodalbody.classList.add("todo-modal-body");
+todomodalbody=getTodoModal(todomodalmain,todomodalbody,projects,todosListBox);
+
+todomodalmain.appendChild(todomodalbody);
+body.appendChild(todomodalmain);

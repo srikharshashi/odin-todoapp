@@ -1,7 +1,12 @@
-import {getprojectBox} from "./widgets";
-import {Todo} from "./models";
+import {
+    getprojectBox,
+    getTodoBox
+} from "./widgets";
+import {
+    Todo
+} from "./models";
 
-export function renderProjects(projectsListBox,projects,todosListBox) {
+export function renderProjects(projectsListBox, projects, todosListBox,currentProject) {
     //remove all the children and re add them 
     projectsListBox.replaceChildren();
 
@@ -17,7 +22,7 @@ export function renderProjects(projectsListBox,projects,todosListBox) {
     addproj.appendChild(addicon);
     addproj.appendChild(addprojtitle);
     addproj.onclick = function () {
-        console.log("abcbg");
+        console.log("project modal launch trigger");
         const mainmodal = document.querySelector(".proj-main-modal");
         mainmodal.style.display = "flex";
     }
@@ -27,82 +32,61 @@ export function renderProjects(projectsListBox,projects,todosListBox) {
     projectsListBox.appendChild(addproj);
     let c = 0;
     projects.forEach(e => {
-        let box=getprojectBox(c, e.name);
-        box.onclick=function () {
-            projectsListBox.childNodes.forEach((f)=>{
+        let box = getprojectBox(c, e.name);
+        box.onclick = function () {
+            projectsListBox.childNodes.forEach((f) => {
                 f.classList.remove("active-projbox");
             });
-            box.classList.add("active-projbox"); 
-            // renderTodos(projects[praseInt(box.dataset.index)],todosListBox); 
-            renderTodos(projects[parseInt(box.dataset.index)],todosListBox);         
+
+            box.classList.add("active-projbox");
+
+            currentProject=projects[parseInt(box.dataset.index)];
+
+            renderTodos(projects[parseInt(box.dataset.index)], todosListBox);
         }
         projectsListBox.appendChild(box);
         c = c + 1;
     });
 }
 
-export function renderTodos(project,todosListBox) {
+export function renderTodos(project, todosListBox) {
+    console.log("in render todos");
     todosListBox.replaceChildren();
-    if(project==null)
-    {
-        const error=document.createElement("p");
-        error.textContent="No Project is selected";
+    if (project == null) {
+        const error = document.createElement("p");
+        error.textContent = "No Project is selected";
         todosListBox.appendChild(error);
-        error.style.textAlign="center";
-        error.style.margin="20px";
-    }
-    else
-    {
+        error.style.textAlign = "center";
+        error.style.margin = "20px";
+    } else {
         //change the title
-        const title=document.querySelector(".todosTitle");
-        title.textContent="Todos  :: "+project.name;
+        const title = document.querySelector(".maintodosTitle");
+        title.textContent = "Todos  :: " + project.name;
 
         //append the add todo button if a project is selected
-        const addtodo=document.createElement("div");
+        const addtodo = document.createElement("div");
         addtodo.classList.add("addtodo-button");
-     
+
 
         const addicon = document.createElement("i");
         addicon.classList.add("fa-solid");
         addicon.classList.add("fa-plus");
         const addtodotitle = document.createElement("p");
         addtodotitle.style.margin = "10px";
-        addtodotitle.textContent = "New Project";
+        addtodotitle.textContent = "New Todo";
         addtodo.appendChild(addicon);
         addtodo.appendChild(addtodotitle);
         addtodo.onclick = function () {
-        console.log("add todo trigger");
+            console.log(`add todo trigger for ${project.name}`);
+            const mainmodal=document.querySelector(".todo-main-modal");
+            mainmodal.style.display="flex";
+        }
 
-    }
+        todosListBox.appendChild(addtodo);
 
-        
+        project.todos.forEach((e)=>{
+            todosListBox.appendChild(getTodoBox(e));
+        });
 
-
-
-
-
-
-
-    todosListBox.appendChild(addtodo);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        console.log(project);
     }
 }

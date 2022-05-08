@@ -1,22 +1,23 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
-html,body {
-    height:100%;
+
+html,
+body {
+    height: 100%;
     width: 100%;
 }
-@font-face{
-    font-family:"zebrazil-normal";
+
+@font-face {
+    font-family: "zebrazil-normal";
     src: url("fonts/zebrazil.ttf");
 }
 
 
-.main-content
-{
+.main-content {
     /* border: 10px solid red; */
     height: 100%;
     width: 100%;
@@ -24,8 +25,8 @@ html,body {
     flex-direction: column;
     /* color: blue; */
 }
-nav
-{
+
+nav {
     height: 7%;
     /* border: 3px solid green; */
     width: 100%;
@@ -35,8 +36,7 @@ nav
     align-items: center;
 }
 
-.mainbody
-{
+.mainbody {
     /* border: 3px solid blue; */
     height: 93%;
     width: 100%;
@@ -44,26 +44,26 @@ nav
     flex-direction: row;
 
 }
-.main-tasks
-{
+
+.main-tasks {
     /* border: 3px solid red; */
 
     flex-grow: 4;
 }
-.main-projects
-{
+
+.main-projects {
     /* border: 3px solid blue; */
     flex-grow: 2;
     padding: 30px;
 }
-.appname
-{
+
+.appname {
     font-size: 30px;
     font-weight: bold;
     margin: 0px 30px;
 }
-.projectsTitle
-{
+
+.projectsTitle {
     font-family: "zebrazil-normal";
     font-size: 30px;
     font-weight: bold;
@@ -71,15 +71,14 @@ nav
     padding: 5px 0px;
     border-bottom: 2px solid black;
     text-align: center;
-    height:10% ;
+    height: 10%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.projectsListBox
-{
+.projectsListBox {
     height: 90%;
     width: 100%;
     /* border: 2px solid red; */
@@ -88,8 +87,7 @@ nav
     padding: 10px;
 }
 
-.projdiv
-{
+.projdiv {
     height: 10%;
     width: 100%;
     margin: 5px;
@@ -100,48 +98,51 @@ nav
     border-radius: 20px;
 }
 
-.projdiv:hover
-{
+.projdiv:hover {
     border: 4px solid rgb(40, 173, 167);
 
 }
 
-.proj-main-modal
-{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+.proj-main-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
     /* overflow: auto; Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+
 }
 
-.proj-modal-body
-{
+.proj-modal-body {
     background-color: #fefefe;
-    margin: 10% auto; /* 15% from the top and centered */
+    margin: 10% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 3px solid rgb(6, 6, 6);
     border-radius: 10px;
-    width: 50%; 
+    width: 50%;
     height: 50%;
     flex-direction: column;
     display: flex;
 }
 
-.proj-modaltitle
-{
+.proj-modaltitle {
     font-size: 30px;
     font-weight: bold;
 }
 
-.proj-modaltitle
-{
+.proj-modaltitle {
     height: 20%;
     width: 100%;
     /* border: 1px solid red; */
@@ -152,16 +153,14 @@ nav
     justify-content: space-evenly;
 }
 
-.projtitleip
-{
+.projtitleip {
     border: 1px solid black;
     padding: 10px;
     border-radius: 10px;
     width: 30%;
 }
 
-.proj-submit
-{
+.proj-submit {
     border: 2px solid black;
     width: 20%;
     height: 20%;
@@ -174,17 +173,15 @@ nav
     font-weight: bold;
 }
 
-.proj-submit:hover
-{
+.proj-submit:hover {
     border: 3px solid black;
 }
-.active-projbox
-{
+
+.active-projbox {
     border: 2px solid rgb(40, 173, 167);
 }
 
-.proj-titleipdiv
-{
+.proj-titleipdiv {
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -192,48 +189,43 @@ nav
     align-items: center;
 }
 
-.main-tasks
-{
+.main-tasks {
     padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+
 
 }
-.todosTitle
-{
+
+.maintodosTitle {
     font-family: "zebrazil-normal";
     font-size: 30px;
     font-weight: bold;
 }
-.todosTitleBox
-{
+
+.todosTitleBox {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
     height: 10%;
-    border-bottom:2px solid black ;
+    border-bottom: 2px solid black;
 }
-.todosListBox
-{
+
+.todosListBox {
     padding: 10px;
     height: 90%;
     width: 90%;
     display: flex;
-    /* align-items: center; */
-    justify-content: center;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
 
 }
-.tododiv
-{
-    
-}
 
-.addtodo-button
-{
+.addtodo-button {
     height: 10%;
     width: 80%;
     border: 2px solid black;
@@ -242,4 +234,134 @@ nav
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.addtodo-button:hover {
+    border: 4px solid rgb(40, 173, 167);
+}
+
+.tododiv {
+    padding: 10px;
+    margin: 10px;
+    height: 20%;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.todoTitle
+{
+    align-self: flex-start;
+    font-size: 30px;
+}
+
+.todo-main-modal
+{
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    /* overflow: auto; Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.todo-modal-body {
+    background-color: #fefefe;
+    margin: auto auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 3px solid rgb(6, 6, 6);
+    border-radius: 10px;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    display: flex;
+}
+.todomodbox
+{
+    height: 60%;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+}
+.todomodbox1
+{
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid rgb(48, 202, 34); */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.todomodbox2
+{
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid rgb(25, 0, 255); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-titleipdiv
+{
+    flex-direction: column;
+    padding: 30px;
+    display: flex;
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid red; */
+    justify-content: center;
+}
+
+.todotitleip
+{
+    padding: 5px;
+    border-radius:10px ;
+    border: 2px solid black;
+}
+
+.todomod-descip-div
+{
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid red; */
+}
+.todo-descip
+{
+    height: 60%;
+    width: 90%;
+    border: 2px solid black;
+
+}
+
+.todo-mod-dateip
+{
+    width: 60%;
+    border: 2px solid black;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 5px;
 }
