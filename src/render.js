@@ -85,7 +85,7 @@ export function renderTodos(project, todosListBox) {
         todosListBox.appendChild(addtodo);
 
         project.todos.forEach((e)=>{
-            todosListBox.appendChild(getTodoBox(e));
+            todosListBox.appendChild(getTodoBox(todosListBox,project,e));
         });
 
     }

@@ -6,19 +6,27 @@
                 "title":"abc",
                 "description":"lmmm",
                 "project":"Panda",
-                "time":"11092002"
+                "date":"11092002",
+                "time":"7:00 PM",
+                "isCompleted":false
             },
             {
                 "title":"efg",
                 "description":"lmmmaoo",
                 "project":"Pandasss",
-                "time":"11092002333"
+                "date":"11092002333",
+                "time":"7:00 PM",
+                "isCompleted":true
+
             },
             {
                 "title":"ijk",
                 "description":"lmaaaoo",
                 "project":"Pandesss",
-                "time":"11092002eee333"
+                "date":"11092002eee333",
+                "time":"7:00 PM",
+                "isCompleted":false
+
             }
         ]
     },
@@ -29,19 +37,28 @@
                 "title":"lnop",
                 "description":"lsssmmm",
                 "project":"Panda",
-                "time":"11092002"
+                "date":"11092002",
+                "time":"7:00 PM",
+                "isCompleted":false
+
             },
             {
                 "title":"dfg",
                 "description":"lmmsssmaoo",
                 "project":"Pansssdasss",
-                "time":"11092002333"
+                "date":"11092002333",
+                "time":"7:00 PM",
+                "isCompleted":false
+
             },
             {
                 "title":"khf",
                 "description":"lmaasssaoo",
                 "project":"Pandxfsesss",
-                "time":"11092002saw2dfeee333"
+                "date":"11092002saw2dfeee333",
+                "time":"7:00 PM",
+                "isCompleted":false
+
             }
         ]
     },
@@ -52,19 +69,28 @@
                 "title":"sss",
                 "description":"lsssmmm",
                 "project":"Apple",
-                "time":"11092002"
+                "date":"11092002",
+                "time":"7:00 PM",
+                "isCompleted":false
+
             },
             {
                 "title":"dfg",
                 "description":"lmmsssmaoo",
                 "project":"Apple",
-                "time":"11092002333"
+                "time":"7:00 PM",
+                "date":"11092002333",
+                "isCompleted":false
+
             },
             {
                 "title":"khfs",
                 "description":"lmasasssaoo",
                 "project":"Apple",
-                "time":"11092002saw2dfeee333"
+                "time":"7:00 PM",
+                "date":"11092002saw2dfeee333",
+                "isCompleted":false
+
             }
         ]
     }

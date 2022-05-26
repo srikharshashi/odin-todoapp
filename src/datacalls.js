@@ -8,7 +8,7 @@ export function fetchProjects() {
 
 export function getProjectsobjList(biglist) {
     const pobjlist = biglist.map((pmap) => {
-        const todoslist = pmap.todos.map((todo) => new Todo(todo.title, todo.description, todo.project, todo.time));
+        const todoslist = pmap.todos.map((todo) => new Todo(todo.title, todo.description, todo.project, todo.time,todo.date,todo.isCompleted));
         return new Project(pmap.name, todoslist);
     });
 
@@ -24,7 +24,8 @@ export function getProjectsList(projobjlist) { //List<Map<String,dynamic>>
                     "title": todo.title,
                     "description": todo.description,
                     "project": todo.project,
-                    "time": todo.time
+                    "time": todo.time,
+                    "isCompleted":todo.isCompleted
                 }
             })
         };
